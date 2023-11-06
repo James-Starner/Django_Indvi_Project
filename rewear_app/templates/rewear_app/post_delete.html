@@ -1,0 +1,17 @@
+{% extends 'rewear_app/base_template.html' %}
+
+
+{% block content %}
+
+<!-- Create a Form -->
+<form method="POST">
+    <!-- Security token by Django -->
+    {% csrf_token %}
+    Are you want to delete <a>{{ post.title }}</a>
+    <p></p>
+    <input type="submit" name="submmit" class="btn btn-primary"/>
+    <a class="btn btn-secondary" href="{% url 'posts' %}" role="button">Cancel</a>
+</form>
+
+
+{% endblock %}

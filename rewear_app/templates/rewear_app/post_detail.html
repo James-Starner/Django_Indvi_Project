@@ -1,0 +1,13 @@
+{% extends 'rewear_app/base_template.html' %}
+
+
+{% block content %}
+<img src="{{ post.image.url }}" class="img-responsive" style="max-width:100%; height:auto; float: right; margin-right: 10px;" />
+<h1>Post Title: {{ post.title }}</h1>
+<p><strong>Type:</strong> {{ post.type }}</p>
+<p><strong>Size:</strong> {{ post.size }}</p>
+<p><strong>Brand:</strong> {{ post.brand }}</p>
+<p><strong>Contact_info:</strong> {{ post.contact_info }}</p>
+<p><strong>About:</strong> {{ post.about }}</p>
+
+{% endblock %}

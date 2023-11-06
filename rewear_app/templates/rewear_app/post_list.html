@@ -1,0 +1,22 @@
+{% extends 'rewear_app/base_template.html' %}
+
+
+{% block content %}
+<h1>Your Posts</h1>
+<a class="btn btn-primary" href="{% url 'create_post' %}" role="button">Create New Post</a>
+<p></p>
+{% if post_list %}
+<ul>
+{% for post in post_list %}
+<li>
+    {{ post.title }}:
+    <a class="btn btn-primary" href="{{ post.get_absolute_url }}" role="button">View</a>
+    <a class="btn btn-primary" href="{% url 'update_post' post.id %}" role="button">Update</a>
+    <a class="btn btn-primary" href="{% url 'delete_post' post.id %}" role="button">Delete</a>
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>There are no posts registered.</p>
+{% endif %}
+{% endblock %}
