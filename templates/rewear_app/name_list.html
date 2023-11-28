@@ -1,0 +1,18 @@
+{% extends 'rewear_app/base_template.html' %}
+
+
+{% block content %}
+<h1>Your Posts</h1>
+<p></p>
+{% if name_list %}
+<ul>
+{% for name in name_list %}
+<li>
+    {{ name.name }}:
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>There are no posts registered.</p>
+{% endif %}
+{% endblock %}
